@@ -62,12 +62,12 @@ done
 case $ARCH in
     "i386" | "i686")
         MACHINE=${MACHINE:=qemux86}
-        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
+        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant::0.94.4"
         HASSIO_DOCKER="$DOCKER_REPO/i386-hassio-supervisor"
     ;;
     "x86_64")
         MACHINE=${MACHINE:=qemux86-64}
-        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
+        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant:0.94.4"
         HASSIO_DOCKER="$DOCKER_REPO/amd64-hassio-supervisor"
     ;;
     "arm" |"armv6l")
@@ -91,7 +91,7 @@ case $ARCH in
             echo "[ERROR] Please set machine for $ARCH"
             exit 1
         fi
-        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
+        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant:0.94.4"
         HASSIO_DOCKER="$DOCKER_REPO/aarch64-hassio-supervisor"
     ;;
     *)
