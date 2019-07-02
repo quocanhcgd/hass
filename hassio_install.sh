@@ -63,28 +63,28 @@ case $ARCH in
     "i386" | "i686")
         MACHINE=${MACHINE:=qemux86}
         HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant:0.93.2"
-        HASSIO_DOCKER="$DOCKER_REPO/i386-hassio-supervisor"
+        HASSIO_DOCKER="$DOCKER_REPO/i386-hassio-supervisor:0.93.2"
     ;;
     "x86_64")
         MACHINE=${MACHINE:=qemux86-64}
         HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant:0.93.2"
-        HASSIO_DOCKER="$DOCKER_REPO/amd64-hassio-supervisor"
+        HASSIO_DOCKER="$DOCKER_REPO/amd64-hassio-supervisor:0.93.2"
     ;;
     "arm" |"armv6l")
         if [ -z $MACHINE ]; then
             echo "[ERROR] Please set machine for $ARCH"
             exit 1
         fi
-        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
-        HASSIO_DOCKER="$DOCKER_REPO/armhf-hassio-supervisor"
+        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant:0.93.2"
+        HASSIO_DOCKER="$DOCKER_REPO/armhf-hassio-supervisor:0.93.2"
     ;;
     "armv7l")
         if [ -z $MACHINE ]; then
             echo "[ERROR] Please set machine for $ARCH"
             exit 1
         fi
-        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
-        HASSIO_DOCKER="$DOCKER_REPO/armv7-hassio-supervisor"
+        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant:0.93.2"
+        HASSIO_DOCKER="$DOCKER_REPO/armv7-hassio-supervisor:0.93.2"
     ;;
     "aarch64")
         if [ -z $MACHINE ]; then
@@ -92,7 +92,7 @@ case $ARCH in
             exit 1
         fi
         HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant:0.93.2"
-        HASSIO_DOCKER="$DOCKER_REPO/aarch64-hassio-supervisor"
+        HASSIO_DOCKER="$DOCKER_REPO/aarch64-hassio-supervisor:0.93.2"
     ;;
     *)
         echo "[Error] $ARCH unknown!"
